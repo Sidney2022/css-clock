@@ -178,7 +178,7 @@ body{
 
 .navbar{
     position: absolute;
-    top: 10px;
+    top: 20px;
     right: 10px;
     z-index: 2;
     cursor: pointer;
@@ -187,8 +187,6 @@ body{
     background: #838696;
     border: 0;
     color: #fff;
-
-
 }
 
 .clock-color-scheme{
@@ -196,14 +194,14 @@ body{
     z-index: 2;
     top: 0;
     right: 0;
-    width: 350px;
+    width: 300px;
     height: fit-content;
     background: #29522e;
     color: #eeeeee;
     border-radius: 0 0 0 24px;
     padding: 40px 15px;
     transition:all .3s ease-in-out;
-    transform: translateX(400px);
+    /* transform: translateX(400px); */
 }
 .scheme-active {
     transform: translateX(0);
@@ -214,7 +212,7 @@ body{
     display: flex;
     margin-top: 30px;
     flex-wrap: wrap;
-    gap: 10px; 
+    gap: 5px; 
 }
 
 .color-item {
@@ -280,4 +278,35 @@ body{
     background: url("./img/30.jpg") no-repeat center center/cover;
 }
 
+.sound-toggler {
+    background-color: red;
+    width: 60px;
+    height: 30px;
+    border-radius: 20px;
+    cursor: pointer;
 
+}
+
+.switch {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 20px;
+    transform: translateX(0%);
+    transition: all 0.4s ease-in-out;
+}
+
+.sound-toggler.sound-active {
+    background:#eeeeee;
+}
+
+.sound-toggler.sound-active .switch {
+    transform: translateX(100%);
+}
+
+.clock-sound {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
