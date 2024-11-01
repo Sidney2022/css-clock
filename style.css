@@ -98,11 +98,11 @@ body{
 
 .clock {
     border : 10px solid #29522e;
-    width: 600px;
-    height: 600px;
+    width: 400px;
+    height: 400px;
     border-radius: 50%;
     position: relative;
-    background: url("/img/natalya-letunova-c_KfK8v9aQ4-unsplash.jpg") no-repeat center center/cover;
+    background: url("./img/natalya-letunova-c_KfK8v9aQ4-unsplash.jpg") no-repeat center center/cover;
     
 }
 
@@ -262,22 +262,22 @@ body{
     background: url("./img/10.jpg") no-repeat center center/cover;
 }
 .clock-bg-img2 {
-    background: url("/img/9.jpg") no-repeat center center/cover;
+    background: url("./img/9.jpg") no-repeat center center/cover;
 }
 .clock-bg-img3 {
-    background: url("/img/17.jpg") no-repeat center center/cover;
+    background: url("./img/17.jpg") no-repeat center center/cover;
 }
 .clock-bg-img4 {
     background: url("./img/natalya-letunova-c_KfK8v9aQ4-unsplash.jpg") no-repeat center center/cover;
 }
 .clock-bg-img5 {
-    background: url("/img/29.jpg") no-repeat center center/cover;
+    background: url("./img/29.jpg") no-repeat center center/cover;
 }
 .clock-bg-img6 {
-    background: url("/img/32.jpg") no-repeat center center/cover;
+    background: url("./img/32.jpg") no-repeat center center/cover;
 }
 .clock-bg-img7 {
-    background: url("/img/30.jpg") no-repeat center center/cover;
+    background: url("./img/30.jpg") no-repeat center center/cover;
 }
 
 
