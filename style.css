@@ -1,0 +1,283 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body{
+    /* background : #ccc; */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+:root {
+    --key-text-color: #0b0d0e;
+    --key-wrapper-color: rgba(255, 255, 255, 0.8);
+    --key-label-color : #838696;
+    --key-wrapper-border-color : #0b0b0b;
+    --active-border-color: #00E5FF;
+}
+
+/* Slideshow container styling */
+.slideshow-container {
+    width: 100vw;
+    position: fixed;
+    overflow: hidden;
+    display: flex;
+    top: 0;
+    left: 0;
+    align-items: center;
+    height: 100vh;
+    justify-content: center;
+  }
+  
+  /* Slide styling */
+  .slide {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  /* Image wrapper for consistent aspect ratio (e.g., 16:9) */
+  .image-wrapper {
+    width: 100%;
+    padding-top: 56.25%; 
+    position: relative;
+    background: gray;
+    overflow: hidden;
+    height: 100vh;
+  }
+  
+  /* Slideshow image styling */
+  .slideshow-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    object-fit:cover; 
+  }
+
+ 
+  
+  /* Fade in effect */
+  .fade {
+    animation: fadeAnimation 12s infinite;
+  }
+  
+  @keyframes fadeAnimation {
+    0% { opacity: 1; }
+    33% { opacity: 1; }
+    66% { opacity: 0; }
+    100% { opacity: 0; }
+  }
+  
+  /* Arrange slides to be visible in intervals */
+  .slide:nth-child(1) { animation-delay: 0s; }
+  .slide:nth-child(2) { animation-delay: 4s; }
+  .slide:nth-child(3) { animation-delay: 8s; }
+  
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    /* gap: 30px; */
+    width: 100%;
+    max-width: 1440px;
+    overflow: hidden;
+    /* z-index: 1; */
+}
+
+
+.display {
+    font-size: 50px;
+}
+
+.clock {
+    border : 10px solid #29522e;
+    width: 600px;
+    height: 600px;
+    border-radius: 50%;
+    position: relative;
+    background: url("/img/natalya-letunova-c_KfK8v9aQ4-unsplash.jpg") no-repeat center center/cover;
+    
+}
+
+.clock-hand {
+    width: 40%;
+    height: 2px;
+    background  : black;
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform-origin: 100%;
+    
+}
+
+
+.second-hand {
+    transform : rotate(90deg) ;
+    height: 2px;
+    /* transform-origin: 100%; */
+}
+
+.minute-hand {
+    height: 4px;
+    transform : rotate(90deg) ;
+    
+}
+
+.hour-hand {
+    transform : rotate(90deg) ;
+    height: 7px;
+    /* transform-origin: 100%; */
+}
+
+.clock-center {
+    position: absolute;
+    top: 48%;
+    left: 48%;
+    font-size: 200px;
+    height: 5%;
+    width: 5%;
+    background : black;
+    border-radius: 50%;
+    z-index: 1;
+
+}
+.clock-digits{
+
+    font-size: 30px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+    visibility: hidden;
+}
+.clock-digit {
+    position: absolute;
+    font-weight: bold;
+
+    /* transition and visibility */
+    
+    /* aligning the numbers to a circle */
+    transform: translate(-50%, -50%) ;
+    top: calc(50% + 46% *  sin(calc(var(--i) * 30deg - 90deg)));
+    left: calc(50% + 46% * cos(calc(var(--i) * 30deg - 90deg )));
+}
+
+.clock:hover {
+    cursor: pointer;
+}
+
+.clock:hover .clock-digits {
+    opacity: 1;
+    visibility: visible;
+}
+
+.navbar{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 2;
+    cursor: pointer;
+    padding: 5px 20px;
+    cursor: pointer;
+    background: #838696;
+    border: 0;
+    color: #fff;
+
+
+}
+
+.clock-color-scheme{
+    position: fixed;
+    z-index: 2;
+    top: 0;
+    right: 0;
+    width: 350px;
+    height: fit-content;
+    background: #29522e;
+    color: #eeeeee;
+    border-radius: 0 0 0 24px;
+    padding: 40px 15px;
+    transition:all .3s ease-in-out;
+    transform: translateX(400px);
+}
+.scheme-active {
+    transform: translateX(0);
+
+}
+
+.clock-color-items {
+    display: flex;
+    margin-top: 30px;
+    flex-wrap: wrap;
+    gap: 10px; 
+}
+
+.color-item {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid orange;
+    width: 31%;
+    height: 100px;
+    /* height: 100px; */
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    padding: 5px;
+
+}
+
+.clock-bg {
+
+    /* margin-top: 20px; */
+    border: 1px solid orange;
+    padding: 5px;
+
+}
+
+.clock-bg-images {
+    display: flex;
+    /* width: ; */
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.clock-bg-image, input[type="color"] {
+    width: 50px;
+    overflow: hidden;
+    height: 50px;
+    border: 7px solid #333;
+    border-radius: 12px;
+    cursor: pointer;
+    
+}
+
+.clock-bg-img1 {
+    background: url("./img/10.jpg") no-repeat center center/cover;
+}
+.clock-bg-img2 {
+    background: url("/img/9.jpg") no-repeat center center/cover;
+}
+.clock-bg-img3 {
+    background: url("/img/17.jpg") no-repeat center center/cover;
+}
+.clock-bg-img4 {
+    background: url("./img/natalya-letunova-c_KfK8v9aQ4-unsplash.jpg") no-repeat center center/cover;
+}
+.clock-bg-img5 {
+    background: url("/img/29.jpg") no-repeat center center/cover;
+}
+.clock-bg-img6 {
+    background: url("/img/32.jpg") no-repeat center center/cover;
+}
+.clock-bg-img7 {
+    background: url("/img/30.jpg") no-repeat center center/cover;
+}
+
+
