@@ -53,6 +53,7 @@ var hour_hand_input = document.querySelector('#hour-hand-col')
 var clock_numbers_input = document.querySelector('#clock-digits-col')
 var clock_frame_input = document.querySelector('#clock-frame-col')
 var clock_bg_input = document.querySelector('#clock-bg-col')
+var clock_size_adjuster = document.querySelector('#clock-size-adj')
 
 // actual elements
 var second_hand_element = document.querySelector('.second-hand')
@@ -82,16 +83,19 @@ clock_element.style.background=clock_bg_input.value
 })
 
 clock_numbers_input.addEventListener('input', () => {
+    clock_numbers.style.color=clock_numbers_input.value
+})
 
-// clock_numbers.style.visibility='visible'
-// clock_numbers.style.opacity=1
-clock_numbers.style.color=clock_numbers_input.value
+clock_size_adjuster.addEventListener('input', () => {
+    var min_view_port=Math.min(window.innerHeight, window.innerWidth)
+    const pxValue=`${(clock_size_adjuster.value*min_view_port)/100}px`
+    clock_element.style.width=pxValue
+    clock_element.style.height=pxValue
 })
 
 clock_bg_image.forEach(imageElem => {
 imageElem.addEventListener('click', () => {
-var computedStyles =getComputedStyle(imageElem)        // alert('hi')
-// alert(computedStyles.background)
+var computedStyles =getComputedStyle(imageElem)  
 clock_element.style.background = computedStyles.background
 })
 })

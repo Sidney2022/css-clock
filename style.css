@@ -89,6 +89,7 @@ body{
     max-width: 1440px;
     overflow: hidden;
     /* z-index: 1; */
+    margin: 0 auto;
 }
 
 
@@ -98,8 +99,8 @@ body{
 
 .clock {
     border : 10px solid #29522e;
-    width: 400px;
-    height: 400px;
+    width: 100vh;
+    height: 100vh;
     border-radius: 50%;
     position: relative;
     background: url("./img/natalya-letunova-c_KfK8v9aQ4-unsplash.jpg") no-repeat center center/cover;
@@ -140,7 +141,6 @@ body{
     position: absolute;
     top: 48%;
     left: 48%;
-    font-size: 200px;
     height: 5%;
     width: 5%;
     background : black;
@@ -150,7 +150,7 @@ body{
 }
 .clock-digits{
 
-    font-size: 30px;
+    /* font-size: 30px */
     opacity: 0;
     transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
     visibility: hidden;
@@ -194,7 +194,7 @@ body{
     z-index: 2;
     top: 0;
     right: 0;
-    width: 300px;
+    width: 280px;
     height: fit-content;
     background: #29522e;
     color: #eeeeee;
@@ -218,24 +218,19 @@ body{
 .color-item {
     display: flex;
     flex-direction: column;
-    border: 1px solid orange;
-    width: 31%;
+    border: 1px solid rgb(143, 133, 114);
+    /* width: 31%; */
     height: 100px;
-    /* height: 100px; */
     gap: 10px;
     justify-content: center;
     align-items: center;
     font-size: 12px;
     padding: 5px;
-
+    border-radius: 5px;
 }
 
-.clock-bg {
-
-    /* margin-top: 20px; */
-    border: 1px solid orange;
-    padding: 5px;
-
+.clock-bg-custom {
+    height: fit-content;
 }
 
 .clock-bg-images {
@@ -247,11 +242,11 @@ body{
 }
 
 .clock-bg-image, input[type="color"] {
-    width: 50px;
+    width: 30px;
+    height: 30px;
     overflow: hidden;
-    height: 50px;
-    border: 7px solid #333;
-    border-radius: 12px;
+    border: 2px solid #333;
+    /* border-radius: 12px; */
     cursor: pointer;
     
 }
@@ -305,7 +300,7 @@ body{
 }
 
 .clock-sound {
-    margin-top: 10px;
+    /* margin-top: 10px; */
     display: flex;
     flex-direction: column;
     gap: 5px;
