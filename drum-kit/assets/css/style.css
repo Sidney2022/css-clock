@@ -1,0 +1,126 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root {
+    --key-text-color: #0b0d0e;
+    --key-wrapper-color: rgba(255, 255, 255, 0.8);
+    --key-label-color : #838696; 
+    --key-wrapper-border-color : #0b0b0b;
+    --active-border-color: #00E5FF;
+}
+
+.dark-mode {
+    /* colors */
+    --key-text-color: #00E5FF;
+    --key-wrapper-color: rgba(11, 13, 14, 0.8);
+    --key-label-color : #E0F7FA; 
+    --key-wrapper-border-color : #fff;
+    --active-border-color: #00E5FF;
+
+}
+
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 200px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    background: url('/assets/img/marco-d-abramo-bLyxB-lqqu0-unsplash~2.jpg') no-repeat center center/cover;
+    background-position: center;
+    background-size: 100% auto;
+    z-index: -1;
+    filter: grayscale(0.9);
+}
+
+.flex {
+    display: flex;
+    /* gap */
+}
+
+.number-keys {
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.keyboard-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+}
+
+.key-wrapper {
+    background: var(--key-wrapper-color);
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid var(--key-wrapper-border-color);
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    transition: transform 0.1s ease-in-out;
+}
+
+.sound-active {
+    border-color:  var(--active-border-color);
+}
+.sound-active .key-label {
+    font-size: 17px;
+}
+.sound-active .number-key {
+    font-size: 40px;
+    
+}
+
+.number-key, .alpha-key {
+    color: var(--key-text-color);
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.key-label {
+    color: var(--key-label-color);
+    font-size: 12px;
+}
+
+.alpha-row-divider {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+
+
+.theme-toggle {
+    position: fixed;
+    top: 30px;
+    right: 30px;
+    border: none;
+    font-size: 50px;
+    background: transparent;
+    cursor: pointer;
+}
+
+
