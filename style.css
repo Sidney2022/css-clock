@@ -201,7 +201,7 @@ body{
     border-radius: 0 0 0 24px;
     padding: 40px 15px;
     transition:all .3s ease-in-out;
-    /* transform: translateX(400px); */
+    transform: translateX(400px);
 }
 .scheme-active {
     transform: translateX(0);
